@@ -120,6 +120,24 @@ export const projects: Project[] = [
     color: "var(--sky-clear)",
     icon: "💥",
   },
+  {
+    slug: "fredag",
+    name: "Är det Fredag?",
+    tagline: "The only calendar you need",
+    description:
+      "A single-purpose Swedish web app that answers the only question that matters: Is it Friday? Celebrates with rainbow confetti on Fridays, delivers the bad news gracefully on every other day. Hydration-safe client-side date detection keeps the answer accurate no matter when you visit.",
+    features: [
+      "Real-time Friday detection with hydration-safe rendering",
+      "Rainbow confetti celebration on Fridays",
+      "Swedish localization with playful messaging",
+      "Minimal, shareable single-purpose design",
+    ],
+    techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    liveUrl: "https://fredag.minabekanta.se",
+    sourceUrl: "https://gitlab.com/Timberbain/fredag",
+    color: "var(--sunlight)",
+    icon: "🐸",
+  },
 ];
 
 export function getProject(slug: string): Project | undefined {
