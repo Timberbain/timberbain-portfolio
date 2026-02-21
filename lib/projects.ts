@@ -102,6 +102,24 @@ export const projects: Project[] = [
     color: "var(--sunbeam)",
     icon: "⚔️",
   },
+  {
+    slug: "banger",
+    name: "Banger",
+    tagline: "Asymmetric 1v2 arena combat",
+    description:
+      "A multiplayer arena shooter where one powerful predator hunts two agile guardians across pixel art arenas. Server-authoritative 60Hz netcode with client prediction keeps combat tight, while destructible environments and stage rotation keep every round unpredictable.",
+    features: [
+      "Asymmetric 1v2 gameplay with unique physics per role",
+      "Server-authoritative netcode with client-side prediction",
+      "Multiple arenas with destructible obstacles and stage rotation",
+      "Private lobbies and public matchmaking with reconnection support",
+    ],
+    techStack: ["Phaser 3", "Colyseus", "TypeScript", "Node.js"],
+    liveUrl: "https://banger.timbernerds.com",
+    sourceUrl: "https://github.com/timberbain/banger-game",
+    color: "var(--sky-clear)",
+    icon: "💥",
+  },
 ];
 
 export function getProject(slug: string): Project | undefined {
