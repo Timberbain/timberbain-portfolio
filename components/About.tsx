@@ -1,16 +1,9 @@
 "use client";
 
+import NowPlaying from "@/components/NowPlaying";
 import Aurora from "@/components/reactbits/Aurora";
-import CountUp from "@/components/reactbits/CountUp";
 import DecryptedText from "@/components/reactbits/DecryptedText";
 import ScrollReveal from "@/components/reactbits/ScrollReveal";
-import TechInventory from "@/components/TechInventory";
-
-const stats = [
-  { label: "Years Coding", value: 14, suffix: "+" },
-  { label: "Side Projects", value: 20, suffix: "+" },
-  { label: "Coffees", value: 9001, suffix: "+" },
-];
 
 export default function About() {
   return (
@@ -51,45 +44,9 @@ export default function About() {
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* Tech Inventory */}
-          <ScrollReveal>
-            <TechInventory />
-          </ScrollReveal>
-
-          {/* Stats */}
-          <ScrollReveal>
-            <div className="pixel-border bg-pixel-dark/80 rounded-lg p-6 sm:p-8">
-              <h3 className="font-pixel text-leaf-fresh mb-6 text-xs tracking-widest uppercase">
-                Player Stats
-              </h3>
-              <div className="space-y-8">
-                {stats.map((stat) => (
-                  <div key={stat.label} className="flex items-baseline gap-4">
-                    <span className="font-pixel text-sunlight text-2xl sm:text-4xl">
-                      <CountUp to={stat.value} duration={2500} suffix={stat.suffix} separator="," />
-                    </span>
-                    <span className="font-body text-pixel-white/60 text-sm tracking-wider uppercase">
-                      {stat.label}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
-              {/* Class badge */}
-              <div className="border-forest-canopy/30 mt-8 border-t pt-6">
-                <div className="flex items-center gap-3">
-                  <span className="font-pixel text-pixel-white/50 text-[10px]">CLASS:</span>
-                  <span className="font-pixel text-leaf-bright text-xs">Full-Stack Dev</span>
-                </div>
-                <div className="mt-2 flex items-center gap-3">
-                  <span className="font-pixel text-pixel-white/50 text-[10px]">TITLE:</span>
-                  <span className="font-pixel text-sunlight text-xs">Lead Engineer</span>
-                </div>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
+        <ScrollReveal>
+          <NowPlaying />
+        </ScrollReveal>
       </div>
     </section>
   );
