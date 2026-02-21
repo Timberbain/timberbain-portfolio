@@ -84,6 +84,24 @@ export const projects: Project[] = [
     color: "var(--pixel-glow)",
     icon: "🌱",
   },
+  {
+    slug: "world-of-conquest",
+    name: "World of Conquest",
+    tagline: "Turn gaming rivalries into global empires",
+    description:
+      "A real-time multiplayer strategy platform where players conquer countries by challenging rivals to 1v1 duels across games like StarCraft, Chess, and Counter-Strike. Territories carry real-world stats — population, GDP, and gold — feeding into a gamified scoring system that rewards different conquest strategies.",
+    features: [
+      "Interactive world map with real-time territory control",
+      "1v1 duel system across 7 configurable games",
+      "Gamified scoring system with strategic playstyles",
+      "Teams, betting, and Discord bot integration",
+    ],
+    techStack: ["Next.js", "TypeScript", "MongoDB", "Leaflet"],
+    liveUrl: "#",
+    sourceUrl: "#",
+    color: "var(--sunbeam)",
+    icon: "⚔️",
+  },
 ];
 
 export function getProject(slug: string): Project | undefined {
