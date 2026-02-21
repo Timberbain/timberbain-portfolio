@@ -18,21 +18,10 @@ const ClickSpark = dynamic(() => import("@/components/reactbits/ClickSpark"), {
 
 export default function Home() {
   return (
-    <ClickSpark
-      sparkColor="#52b788"
-      sparkSize={12}
-      sparkRadius={20}
-      sparkCount={8}
-      duration={500}
-    >
+    <ClickSpark sparkColor="#52b788" sparkSize={12} sparkRadius={20} sparkCount={8} duration={500}>
       {/* Pixel cursor trail - desktop only */}
       <div className="hidden md:block">
-        <PixelTrail
-          gridSize={30}
-          trailSize={2}
-          maxAge={400}
-          color="#52b788"
-        />
+        <PixelTrail gridSize={30} trailSize={2} maxAge={400} color="#52b788" />
       </div>
 
       {/* Scanline overlay */}

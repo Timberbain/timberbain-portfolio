@@ -26,23 +26,23 @@ export default function ProjectDetail({ project, prev, next }: ProjectDetailProp
       <ScanlineOverlay />
       <Navigation />
 
-      <main className="min-h-screen bg-pixel-dark pt-16 pb-32">
+      <main className="bg-pixel-dark min-h-screen pt-16 pb-32">
         {/* Hero area */}
         <section className="relative py-16 sm:py-24">
           <div className="mx-auto max-w-4xl px-4 sm:px-6">
             {/* Back link */}
             <Link
               href="/#projects"
-              className="inline-flex items-center gap-2 font-pixel text-[10px] text-pixel-white/50 hover:text-leaf-fresh transition-colors mb-8"
+              className="font-pixel text-pixel-white/50 hover:text-leaf-fresh mb-8 inline-flex items-center gap-2 text-[10px] transition-colors"
             >
               <span>&lt;</span> BACK TO QUESTS
             </Link>
 
             {/* Project icon */}
-            <div className="text-6xl mb-6">{project.icon}</div>
+            <div className="mb-6 text-6xl">{project.icon}</div>
 
             {/* Title */}
-            <h1 className="font-pixel text-xl sm:text-3xl text-pixel-white mb-4">
+            <h1 className="font-pixel text-pixel-white mb-4 text-xl sm:text-3xl">
               <DecryptedText
                 text={project.name.toUpperCase()}
                 speed={30}
@@ -52,20 +52,20 @@ export default function ProjectDetail({ project, prev, next }: ProjectDetailProp
             </h1>
 
             {/* Tagline */}
-            <p className="font-body text-lg sm:text-xl text-pixel-white/60 mb-8">
+            <p className="font-body text-pixel-white/60 mb-8 text-lg sm:text-xl">
               {project.tagline}
             </p>
 
             {/* Tech inventory */}
-            <div className="pixel-border bg-pixel-dark/80 p-4 rounded-lg inline-block">
-              <span className="font-pixel text-[8px] text-pixel-white/40 uppercase tracking-widest block mb-3">
+            <div className="pixel-border bg-pixel-dark/80 inline-block rounded-lg p-4">
+              <span className="font-pixel text-pixel-white/40 mb-3 block text-[8px] tracking-widest uppercase">
                 Inventory
               </span>
               <div className="flex flex-wrap gap-2">
                 {project.techStack.map((tech) => (
                   <span
                     key={tech}
-                    className="font-mono text-xs px-3 py-1.5 bg-forest-canopy/20 text-leaf-bright rounded border border-forest-canopy/40"
+                    className="bg-forest-canopy/20 text-leaf-bright border-forest-canopy/40 rounded border px-3 py-1.5 font-mono text-xs"
                   >
                     {tech}
                   </span>
@@ -76,17 +76,17 @@ export default function ProjectDetail({ project, prev, next }: ProjectDetailProp
         </section>
 
         {/* Content */}
-        <section className="mx-auto max-w-4xl px-4 sm:px-6 space-y-12">
+        <section className="mx-auto max-w-4xl space-y-12 px-4 sm:px-6">
           {/* Description */}
           <ScrollReveal>
             <SpotlightCard
-              className="pixel-border bg-pixel-dark/60 p-6 sm:p-8 rounded-lg"
+              className="pixel-border bg-pixel-dark/60 rounded-lg p-6 sm:p-8"
               spotlightColor="rgba(82, 183, 136, 0.08)"
             >
-              <h2 className="font-pixel text-xs text-sunlight mb-4 uppercase tracking-widest">
+              <h2 className="font-pixel text-sunlight mb-4 text-xs tracking-widest uppercase">
                 Quest Details
               </h2>
-              <p className="font-body text-base sm:text-lg text-pixel-white/80 leading-relaxed">
+              <p className="font-body text-pixel-white/80 text-base leading-relaxed sm:text-lg">
                 {project.description}
               </p>
             </SpotlightCard>
@@ -95,17 +95,17 @@ export default function ProjectDetail({ project, prev, next }: ProjectDetailProp
           {/* Features */}
           <ScrollReveal>
             <SpotlightCard
-              className="pixel-border bg-pixel-dark/60 p-6 sm:p-8 rounded-lg"
+              className="pixel-border bg-pixel-dark/60 rounded-lg p-6 sm:p-8"
               spotlightColor="rgba(249, 199, 79, 0.08)"
             >
-              <h2 className="font-pixel text-xs text-sunlight mb-4 uppercase tracking-widest">
+              <h2 className="font-pixel text-sunlight mb-4 text-xs tracking-widest uppercase">
                 Abilities
               </h2>
               <ul className="space-y-3">
                 {project.features.map((feature, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <span className="font-pixel text-[10px] text-leaf-fresh mt-1">▸</span>
-                    <span className="font-body text-sm sm:text-base text-pixel-white/70">
+                    <span className="font-pixel text-leaf-fresh mt-1 text-[10px]">▸</span>
+                    <span className="font-body text-pixel-white/70 text-sm sm:text-base">
                       {feature}
                     </span>
                   </li>
@@ -129,15 +129,15 @@ export default function ProjectDetail({ project, prev, next }: ProjectDetailProp
           </div>
 
           {/* Prev / Next navigation */}
-          <div className="flex justify-between items-center pt-12 border-t border-forest-canopy/20">
+          <div className="border-forest-canopy/20 flex items-center justify-between border-t pt-12">
             {prev ? (
               <Link
                 href={`/projects/${prev.slug}`}
-                className="group flex items-center gap-3 font-pixel text-[10px] text-pixel-white/50 hover:text-leaf-fresh transition-colors"
+                className="group font-pixel text-pixel-white/50 hover:text-leaf-fresh flex items-center gap-3 text-[10px] transition-colors"
               >
-                <span className="group-hover:-translate-x-1 transition-transform">&lt;</span>
+                <span className="transition-transform group-hover:-translate-x-1">&lt;</span>
                 <span>
-                  <span className="block text-[8px] text-pixel-white/30 mb-1">PREV QUEST</span>
+                  <span className="text-pixel-white/30 mb-1 block text-[8px]">PREV QUEST</span>
                   {prev.name}
                 </span>
               </Link>
@@ -147,13 +147,13 @@ export default function ProjectDetail({ project, prev, next }: ProjectDetailProp
             {next ? (
               <Link
                 href={`/projects/${next.slug}`}
-                className="group flex items-center gap-3 font-pixel text-[10px] text-pixel-white/50 hover:text-leaf-fresh transition-colors text-right"
+                className="group font-pixel text-pixel-white/50 hover:text-leaf-fresh flex items-center gap-3 text-right text-[10px] transition-colors"
               >
                 <span>
-                  <span className="block text-[8px] text-pixel-white/30 mb-1">NEXT QUEST</span>
+                  <span className="text-pixel-white/30 mb-1 block text-[8px]">NEXT QUEST</span>
                   {next.name}
                 </span>
-                <span className="group-hover:translate-x-1 transition-transform">&gt;</span>
+                <span className="transition-transform group-hover:translate-x-1">&gt;</span>
               </Link>
             ) : (
               <div />

@@ -6,28 +6,28 @@ Solarpunk + retro gaming aesthetic. Think forest-dwelling pixel art rendered on 
 
 ### Forest (Primary)
 
-| Token              | Hex       | Usage                                             |
-| ------------------ | --------- | ------------------------------------------------- |
-| `--forest-deep`    | `#1a4d2e` | Darkest green. Borders, button drop-shadows, deep backgrounds |
-| `--forest-canopy`  | `#2d6a4f` | Mid green. Scrollbar thumb, card borders, nav active states |
-| `--leaf-fresh`     | `#52b788` | Primary action color. Buttons, links, hover states, section labels |
-| `--leaf-bright`    | `#95d5b2` | Light green. Tech tags, secondary labels, class badges |
+| Token             | Hex       | Usage                                                              |
+| ----------------- | --------- | ------------------------------------------------------------------ |
+| `--forest-deep`   | `#1a4d2e` | Darkest green. Borders, button drop-shadows, deep backgrounds      |
+| `--forest-canopy` | `#2d6a4f` | Mid green. Scrollbar thumb, card borders, nav active states        |
+| `--leaf-fresh`    | `#52b788` | Primary action color. Buttons, links, hover states, section labels |
+| `--leaf-bright`   | `#95d5b2` | Light green. Tech tags, secondary labels, class badges             |
 
 ### Accent
 
-| Token          | Hex       | Usage                                          |
-| -------------- | --------- | ---------------------------------------------- |
-| `--sunlight`   | `#f9c74f` | Gold. Section headings, stat numbers, emphasis  |
-| `--sunbeam`    | `#f4a261` | Warm orange. Skill bar accent, sparingly used   |
-| `--sky-clear`  | `#90e0ef` | Cyan. Skill bar accent, cool contrast           |
-| `--sky-dawn`   | `#caf0f8` | Pale blue. Reserved for subtle cool highlights  |
+| Token         | Hex       | Usage                                          |
+| ------------- | --------- | ---------------------------------------------- |
+| `--sunlight`  | `#f9c74f` | Gold. Section headings, stat numbers, emphasis |
+| `--sunbeam`   | `#f4a261` | Warm orange. Skill bar accent, sparingly used  |
+| `--sky-clear` | `#90e0ef` | Cyan. Skill bar accent, cool contrast          |
+| `--sky-dawn`  | `#caf0f8` | Pale blue. Reserved for subtle cool highlights |
 
 ### Base
 
-| Token           | Hex       | Usage                                              |
-| --------------- | --------- | -------------------------------------------------- |
-| `--pixel-dark`  | `#0d1b0e` | Near-black green. Page background, body bg          |
-| `--pixel-white` | `#f0f7f0` | Off-white with green tint. Primary text color       |
+| Token           | Hex       | Usage                                                    |
+| --------------- | --------- | -------------------------------------------------------- |
+| `--pixel-dark`  | `#0d1b0e` | Near-black green. Page background, body bg               |
+| `--pixel-white` | `#f0f7f0` | Off-white with green tint. Primary text color            |
 | `--pixel-glow`  | `#b5e48c` | Lime green. Glow effects, skill bar accent, button hover |
 
 ### Usage Guidelines
@@ -42,11 +42,11 @@ Solarpunk + retro gaming aesthetic. Think forest-dwelling pixel art rendered on 
 
 ### Font Families
 
-| Variable       | Font            | Usage                                         |
-| -------------- | --------------- | --------------------------------------------- |
-| `--font-pixel` | Press Start 2P  | Headings, labels, navigation, buttons, stats  |
-| `--font-body`  | Outfit          | Body text, paragraphs, descriptions           |
-| `--font-mono`  | JetBrains Mono  | Tech tags, code references, inventory items   |
+| Variable       | Font           | Usage                                        |
+| -------------- | -------------- | -------------------------------------------- |
+| `--font-pixel` | Press Start 2P | Headings, labels, navigation, buttons, stats |
+| `--font-body`  | Outfit         | Body text, paragraphs, descriptions          |
+| `--font-mono`  | JetBrains Mono | Tech tags, code references, inventory items  |
 
 ### Tailwind Classes
 
@@ -57,6 +57,7 @@ Solarpunk + retro gaming aesthetic. Think forest-dwelling pixel art rendered on 
 ### Type Scale
 
 Pixel font (headings):
+
 - Hero title: `text-2xl sm:text-4xl md:text-5xl`
 - Section headers: `text-lg sm:text-2xl`
 - Page titles: `text-xl sm:text-3xl`
@@ -64,12 +65,14 @@ Pixel font (headings):
 - Micro labels: `text-[10px]`, `text-[8px]`
 
 Body font (content):
+
 - Hero subtitle: `text-lg sm:text-xl md:text-2xl`
 - Paragraphs: `text-base sm:text-lg` or `text-lg sm:text-xl`
 - Descriptions: `text-sm sm:text-base`
 - Small text: `text-xs`
 
 Mono font (tags):
+
 - Tech tags: `text-[10px]` (in cards), `text-xs` (in detail pages)
 
 ### Text Color Opacity Scale
@@ -83,7 +86,7 @@ Applied to `text-pixel-white` with Tailwind opacity modifier:
 | `/70`   | Card descriptions, feature list items       |
 | `/60`   | Taglines, subdued stat labels               |
 | `/50`   | Back links, navigation labels, subtle hints |
-| `/40`   | Overflow counts ("+3"), footer labels        |
+| `/40`   | Overflow counts ("+3"), footer labels       |
 | `/30`   | Prev/next quest micro labels                |
 | `/20`   | Copyright text, minimal visibility          |
 
@@ -143,9 +146,9 @@ The signature 3D retro panel effect:
 
 ```css
 box-shadow:
-  inset -4px -4px 0px 0px rgba(0, 0, 0, 0.3),      /* Bottom-right inner shadow */
-  inset 4px 4px 0px 0px rgba(255, 255, 255, 0.15),   /* Top-left inner highlight */
-  0 0 0 4px var(--forest-deep);                        /* Outer border */
+  inset -4px -4px 0px 0px rgba(0, 0, 0, 0.3),
+  /* Bottom-right inner shadow */ inset 4px 4px 0px 0px rgba(255, 255, 255, 0.15),
+  /* Top-left inner highlight */ 0 0 0 4px var(--forest-deep); /* Outer border */
 ```
 
 Used on: stat panels, tech inventory, content cards (SpotlightCard wrappers).
@@ -153,6 +156,7 @@ Used on: stat panels, tech inventory, content cards (SpotlightCard wrappers).
 ### 3D Button Shadows
 
 Primary button:
+
 ```
 shadow-[inset_-3px_-3px_0px_0px_rgba(0,0,0,0.25),inset_3px_3px_0px_0px_rgba(255,255,255,0.25),0_4px_0_0_var(--forest-deep)]
 ```
@@ -227,6 +231,7 @@ pixel-border bg-pixel-dark/80 p-6 sm:p-8 rounded-lg
 ```
 
 For SpotlightCard wrappers:
+
 ```
 pixel-border bg-pixel-dark/60 p-6 sm:p-8 rounded-lg
 ```
@@ -240,11 +245,13 @@ pixel-border bg-pixel-dark/60 p-6 sm:p-8 rounded-lg
 ### Tech Tags
 
 In cards:
+
 ```
 font-mono text-[10px] px-2 py-1 bg-forest-canopy/30 text-leaf-bright rounded border border-forest-canopy/50
 ```
 
 In detail pages:
+
 ```
 font-mono text-xs px-3 py-1.5 bg-forest-canopy/20 text-leaf-bright rounded border border-forest-canopy/40
 ```
@@ -262,6 +269,7 @@ Content sections: `font-pixel text-xs text-sunlight uppercase tracking-widest mb
 ### Navigation Links
 
 Back links and prev/next:
+
 ```
 font-pixel text-[10px] text-pixel-white/50 hover:text-leaf-fresh transition-colors
 ```

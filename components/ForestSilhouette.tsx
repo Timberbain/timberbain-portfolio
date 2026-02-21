@@ -3,10 +3,10 @@
 export default function ForestSilhouette({ className = "" }: { className?: string }) {
   // Pixel art tree silhouettes along a horizon line
   return (
-    <div className={`w-full overflow-hidden pointer-events-none ${className}`}>
+    <div className={`pointer-events-none w-full overflow-hidden ${className}`}>
       <svg
         viewBox="0 0 320 60"
-        className="w-full h-auto"
+        className="h-auto w-full"
         preserveAspectRatio="none"
         style={{ imageRendering: "pixelated" }}
       >

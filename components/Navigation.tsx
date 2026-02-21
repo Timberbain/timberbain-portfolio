@@ -15,11 +15,13 @@ export default function Navigation() {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-50">
-      <div className="bg-pixel-dark/90 backdrop-blur-md border border-forest-canopy/40 rounded-2xl shadow-[0_0_30px_rgba(0,0,0,0.5),0_0_10px_rgba(82,183,136,0.1)]">
-        <Dock className="gap-1 sm:gap-2 px-2 sm:px-4 py-2" magnification={1.3} distance={80}>
+    <nav className="fixed bottom-4 left-1/2 z-50 -translate-x-1/2 sm:bottom-6">
+      <div className="bg-pixel-dark/90 border-forest-canopy/40 rounded-2xl border shadow-[0_0_30px_rgba(0,0,0,0.5),0_0_10px_rgba(82,183,136,0.1)] backdrop-blur-md">
+        <Dock className="gap-1 px-2 py-2 sm:gap-2 sm:px-4" magnification={1.3} distance={80}>
           {navItems.map((item) => {
-            const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href.replace("/#", "/")));
+            const isActive =
+              pathname === item.href ||
+              (item.href !== "/" && pathname.startsWith(item.href.replace("/#", "/")));
 
             if (item.external) {
               return (
@@ -28,11 +30,11 @@ export default function Navigation() {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-xl text-lg sm:text-xl transition-all
-                      ${isActive
+                    className={`flex h-10 w-10 items-center justify-center rounded-xl text-lg transition-all sm:h-12 sm:w-12 sm:text-xl ${
+                      isActive
                         ? "bg-forest-canopy/50 shadow-[0_0_8px_rgba(82,183,136,0.3)]"
                         : "bg-forest-deep/30 hover:bg-forest-canopy/30"
-                      }`}
+                    }`}
                   >
                     {item.icon}
                   </a>
@@ -44,11 +46,11 @@ export default function Navigation() {
               <DockItem key={item.label} label={item.label}>
                 <Link
                   href={item.href}
-                  className={`w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-xl text-lg sm:text-xl transition-all
-                    ${isActive
+                  className={`flex h-10 w-10 items-center justify-center rounded-xl text-lg transition-all sm:h-12 sm:w-12 sm:text-xl ${
+                    isActive
                       ? "bg-forest-canopy/50 shadow-[0_0_8px_rgba(82,183,136,0.3)]"
                       : "bg-forest-deep/30 hover:bg-forest-canopy/30"
-                    }`}
+                  }`}
                 >
                   {item.icon}
                 </Link>

@@ -8,7 +8,7 @@ import { projects } from "@/lib/projects";
 
 export default function ProjectGrid() {
   return (
-    <section id="projects" className="relative py-20 sm:py-32 overflow-hidden">
+    <section id="projects" className="relative overflow-hidden py-20 sm:py-32">
       {/* Squares background */}
       <div className="absolute inset-0 opacity-20">
         <Squares
@@ -23,7 +23,7 @@ export default function ProjectGrid() {
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6">
         {/* Section header */}
         <ScrollReveal>
-          <h2 className="font-pixel text-lg sm:text-2xl text-center text-sunlight mb-4">
+          <h2 className="font-pixel text-sunlight mb-4 text-center text-lg sm:text-2xl">
             <DecryptedText
               text="SIDE QUESTS"
               speed={40}
@@ -31,14 +31,14 @@ export default function ProjectGrid() {
               className="tracking-wider"
             />
           </h2>
-          <p className="font-body text-center text-pixel-white/50 mb-2 text-sm">
+          <p className="font-body text-pixel-white/50 mb-2 text-center text-sm">
             Select a quest to view details
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-sunlight to-transparent mx-auto mb-12" />
+          <div className="via-sunlight mx-auto mb-12 h-1 w-24 bg-gradient-to-r from-transparent to-transparent" />
         </ScrollReveal>
 
         {/* Project grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-2">
           {projects.map((project, i) => (
             <ScrollReveal key={project.slug}>
               <div style={{ transitionDelay: `${i * 100}ms` }}>

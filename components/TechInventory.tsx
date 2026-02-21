@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from 'react';
+import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
 
-type Tier = 'expert' | 'proficient' | 'familiar';
+type Tier = "expert" | "proficient" | "familiar";
 
 interface Skill {
   name: string;
@@ -16,32 +16,32 @@ interface SkillCategory {
 
 const categories: SkillCategory[] = [
   {
-    label: 'Languages & Frameworks',
+    label: "Languages & Frameworks",
     skills: [
-      { name: 'TypeScript', tier: 'expert' },
-      { name: 'Node.js', tier: 'expert' },
-      { name: 'Next.js', tier: 'expert' },
-      { name: 'React', tier: 'proficient' },
-      { name: 'PHP', tier: 'proficient' },
-      { name: 'C++', tier: 'proficient' },
+      { name: "TypeScript", tier: "expert" },
+      { name: "Node.js", tier: "expert" },
+      { name: "Next.js", tier: "proficient" },
+      { name: "React", tier: "proficient" },
+      { name: "PHP", tier: "proficient" },
+      { name: "C++", tier: "proficient" },
     ],
   },
   {
-    label: 'Data Layer',
+    label: "Data Layer",
     skills: [
-      { name: 'MongoDB', tier: 'expert' },
-      { name: 'Kafka', tier: 'expert' },
-      { name: 'PostgreSQL', tier: 'proficient' },
-      { name: 'Redis', tier: 'proficient' },
+      { name: "MongoDB", tier: "expert" },
+      { name: "Kafka", tier: "expert" },
+      { name: "PostgreSQL", tier: "proficient" },
+      { name: "Redis", tier: "proficient" },
     ],
   },
   {
-    label: 'Infrastructure',
+    label: "Infrastructure",
     skills: [
-      { name: 'Docker', tier: 'expert' },
-      { name: 'Kubernetes', tier: 'proficient' },
-      { name: 'AWS', tier: 'proficient' },
-      { name: 'Datadog', tier: 'proficient' },
+      { name: "Docker", tier: "expert" },
+      { name: "Kubernetes", tier: "expert" },
+      { name: "AWS", tier: "proficient" },
+      { name: "Datadog", tier: "proficient" },
     ],
   },
 ];
@@ -53,45 +53,50 @@ const tierConfig: Record<
   { stars: string; border: string; bg: string; text: string; glow: string }
 > = {
   expert: {
-    stars: '★★★',
-    border: 'border-leaf-fresh/60',
-    bg: 'bg-forest-canopy/30',
-    text: 'text-leaf-fresh',
-    glow: 'hover:shadow-[0_0_8px_rgba(82,183,136,0.3)]',
+    stars: "★★★",
+    border: "border-leaf-fresh/60",
+    bg: "bg-forest-canopy/30",
+    text: "text-leaf-fresh",
+    glow: "hover:shadow-[0_0_8px_rgba(82,183,136,0.3)]",
   },
   proficient: {
-    stars: '★★',
-    border: 'border-forest-canopy/40',
-    bg: 'bg-forest-canopy/15',
-    text: 'text-forest-canopy',
-    glow: 'hover:shadow-[0_0_8px_rgba(45,106,79,0.3)]',
+    stars: "★★",
+    border: "border-forest-canopy/40",
+    bg: "bg-forest-canopy/15",
+    text: "text-forest-canopy",
+    glow: "hover:shadow-[0_0_8px_rgba(45,106,79,0.3)]",
   },
   familiar: {
-    stars: '★',
-    border: 'border-forest-canopy/20',
-    bg: 'bg-forest-canopy/10',
-    text: 'text-forest-canopy/60',
-    glow: 'hover:shadow-[0_0_6px_rgba(45,106,79,0.2)]',
+    stars: "★",
+    border: "border-forest-canopy/20",
+    bg: "bg-forest-canopy/10",
+    text: "text-forest-canopy/60",
+    glow: "hover:shadow-[0_0_6px_rgba(45,106,79,0.2)]",
   },
 };
 
-const REDUCED_MOTION_QUERY = '(prefers-reduced-motion: reduce)';
+const REDUCED_MOTION_QUERY = "(prefers-reduced-motion: reduce)";
 
 function usePrefersReducedMotion() {
   const subscribe = useCallback((cb: () => void) => {
     const mql = window.matchMedia(REDUCED_MOTION_QUERY);
-    mql.addEventListener('change', cb);
-    return () => mql.removeEventListener('change', cb);
+    mql.addEventListener("change", cb);
+    return () => mql.removeEventListener("change", cb);
   }, []);
-  const getSnapshot = useCallback(
-    () => window.matchMedia(REDUCED_MOTION_QUERY).matches,
-    [],
-  );
+  const getSnapshot = useCallback(() => window.matchMedia(REDUCED_MOTION_QUERY).matches, []);
   const getServerSnapshot = useCallback(() => false, []);
   return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 }
 
-function SkillItem({ skill, delay, skipAnimation }: { skill: Skill; delay: number; skipAnimation: boolean }) {
+function SkillItem({
+  skill,
+  delay,
+  skipAnimation,
+}: {
+  skill: Skill;
+  delay: number;
+  skipAnimation: boolean;
+}) {
   const [visible, setVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -118,18 +123,10 @@ function SkillItem({ skill, delay, skipAnimation }: { skill: Skill; delay: numbe
   return (
     <div
       ref={ref}
-      className={`
-        rounded-lg border p-2 transition-all duration-300
-        ${config.border} ${config.bg} ${config.glow}
-        ${visible || skipAnimation ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}
-      `}
+      className={`rounded-lg border p-2 transition-all duration-300 ${config.border} ${config.bg} ${config.glow} ${visible || skipAnimation ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"} `}
     >
-      <span className="font-mono text-[10px] text-pixel-white/90 block truncate">
-        {skill.name}
-      </span>
-      <span className={`font-pixel text-[8px] ${config.text} block mt-0.5`}>
-        {config.stars}
-      </span>
+      <span className="text-pixel-white/90 block truncate font-mono text-[10px]">{skill.name}</span>
+      <span className={`font-pixel text-[8px] ${config.text} mt-0.5 block`}>{config.stars}</span>
     </div>
   );
 }
@@ -139,12 +136,12 @@ export default function TechInventory() {
   let itemIndex = 0;
 
   return (
-    <div className="pixel-border bg-pixel-dark/80 p-6 sm:p-8 rounded-lg">
-      <div className="flex items-baseline justify-between mb-6">
-        <h3 className="font-pixel text-xs text-leaf-fresh uppercase tracking-widest">
+    <div className="pixel-border bg-pixel-dark/80 rounded-lg p-6 sm:p-8">
+      <div className="mb-6 flex items-baseline justify-between">
+        <h3 className="font-pixel text-leaf-fresh text-xs tracking-widest uppercase">
           Tech Inventory
         </h3>
-        <span className="font-pixel text-[8px] text-pixel-white/40">
+        <span className="font-pixel text-pixel-white/40 text-[8px]">
           [{totalSkills}/{totalSkills}]
         </span>
       </div>
@@ -152,7 +149,7 @@ export default function TechInventory() {
       <div className="space-y-6">
         {categories.map((category) => (
           <div key={category.label}>
-            <h4 className="font-pixel text-[10px] text-sunlight uppercase tracking-widest mb-3">
+            <h4 className="font-pixel text-sunlight mb-3 text-[10px] tracking-widest uppercase">
               {category.label}
             </h4>
             <div className="grid grid-cols-3 gap-2">
@@ -160,7 +157,12 @@ export default function TechInventory() {
                 const delay = itemIndex * 100;
                 itemIndex++;
                 return (
-                  <SkillItem key={skill.name} skill={skill} delay={delay} skipAnimation={skipAnimation} />
+                  <SkillItem
+                    key={skill.name}
+                    skill={skill}
+                    delay={delay}
+                    skipAnimation={skipAnimation}
+                  />
                 );
               })}
             </div>
@@ -169,8 +171,8 @@ export default function TechInventory() {
       </div>
 
       {/* Legend */}
-      <div className="mt-6 pt-4 border-t border-forest-canopy/20">
-        <div className="flex items-center justify-center gap-4 font-pixel text-[8px] text-pixel-white/40">
+      <div className="border-forest-canopy/20 mt-6 border-t pt-4">
+        <div className="font-pixel text-pixel-white/40 flex items-center justify-center gap-4 text-[8px]">
           <span>
             <span className="text-forest-canopy/60">★</span> Familiar
           </span>

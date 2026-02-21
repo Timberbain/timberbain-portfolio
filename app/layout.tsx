@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${pressStart2P.variable} ${outfit.variable} ${jetbrainsMono.variable} font-body antialiased bg-pixel-dark text-pixel-white`}
+        className={`${pressStart2P.variable} ${outfit.variable} ${jetbrainsMono.variable} font-body bg-pixel-dark text-pixel-white antialiased`}
       >
         {children}
       </body>

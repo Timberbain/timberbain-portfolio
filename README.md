@@ -27,8 +27,8 @@ npm run dev       # Start dev server at localhost:3000
 
 ### Available Scripts
 
-| Command         | Description             |
-| --------------- | ----------------------- |
+| Command         | Description              |
+| --------------- | ------------------------ |
 | `npm run dev`   | Start development server |
 | `npm run build` | Production build         |
 | `npm run lint`  | Run ESLint               |

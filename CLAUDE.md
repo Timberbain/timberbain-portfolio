@@ -5,10 +5,12 @@ See @DESIGN_SYSTEM.md for the design system reference (colors, typography, spaci
 ## Commands
 
 ```bash
-npm run dev      # Start dev server at localhost:3000
-npm run build    # Production build
-npm run lint     # ESLint (v9 flat config with Next.js rules)
-npm start        # Serve production build
+npm run dev          # Start dev server at localhost:3000
+npm run build        # Production build
+npm run lint         # ESLint (v9 flat config with Next.js rules)
+npm run format       # Prettier — format all files
+npm run format:check # Prettier — check without writing
+npm start            # Serve production build
 ```
 
 No test framework is configured.
@@ -29,9 +31,14 @@ All content lives in `lib/projects.ts` as a typed array (no CMS or database).
 - All animations must respect `prefers-reduced-motion`.
 - The homepage (`app/page.tsx`) is a client component. Project detail pages are server components with client sub-components.
 
+## Auto-Formatting
+
+A PostToolUse hook runs Prettier on every file written via Edit/Write. Formatting happens silently before front-end verification. Tailwind classes are auto-sorted by `prettier-plugin-tailwindcss`.
+
 ## Front-End Verification
 
 A PostToolUse hook automatically reminds you to verify after front-end edits. When triggered:
+
 1. Navigate to affected pages via Playwright
 2. Verify against `DESIGN_SYSTEM.md`
 3. Validate the change fulfills the request
