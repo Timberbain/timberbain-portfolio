@@ -9,7 +9,7 @@ const links = [
     href: "https://linkedin.com/in/jonas-brandvik",
     icon: "IN",
   },
-  { label: "Email", href: "mailto:hello@timberbain.dev", icon: "@" },
+  { label: "Email", href: "mailto:timberbain@gmail.com", icon: "@" },
 ];
 
 export default function Footer() {
