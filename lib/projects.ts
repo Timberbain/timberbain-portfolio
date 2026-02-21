@@ -138,6 +138,24 @@ export const projects: Project[] = [
     color: "var(--sunlight)",
     icon: "🐸",
   },
+  {
+    slug: "tiny-heroes-rpg",
+    name: "Tiny Heroes RPG",
+    tagline: "AI-powered adventures for tiny heroes",
+    description:
+      "An interactive storytelling RPG where an AI Game Master guides children through personalized fantasy adventures. Pick from four character classes — Sorceress, Knight, Ranger, or Bard — each with unique skill strengths that shape how challenges play out. Exploding dice mechanics, gentle failure handling, and bilingual support (English & Swedish) keep every quest cozy and replayable.",
+    features: [
+      "AI Game Master with structured adventure planning via GPT-4",
+      "Four character classes with distinct skill-based dice mechanics",
+      "Exploding dice system with animated client-side rolling",
+      "Full English and Swedish localization including AI narration",
+    ],
+    techStack: ["Next.js", "TypeScript", "MongoDB", "OpenAI", "next-intl"],
+    liveUrl: "https://tiny-rpg.timbernerds.com",
+    sourceUrl: "#",
+    color: "var(--sunlight)",
+    icon: "🐉",
+  },
 ];
 
 export function getProject(slug: string): Project | undefined {
