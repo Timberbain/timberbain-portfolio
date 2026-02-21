@@ -4,16 +4,7 @@ import Aurora from '@/components/reactbits/Aurora';
 import CountUp from '@/components/reactbits/CountUp';
 import DecryptedText from '@/components/reactbits/DecryptedText';
 import ScrollReveal from '@/components/reactbits/ScrollReveal';
-import StatBar from '@/components/StatBar';
-
-const skills = [
-  { label: 'TypeScript', value: 86, color: 'var(--sky-clear)' },
-  { label: 'Node.js', value: 91, color: 'var(--pixel-glow)' },
-  { label: 'Next.js', value: 84, color: 'var(--pixel-white)' },
-  { label: 'React', value: 73, color: 'var(--leaf-fresh)' },
-  { label: 'MongoDB', value: 82, color: 'var(--sunbeam)' },
-  { label: 'Postgres', value: 75, color: 'var(--sunlight)' },
-];
+import TechInventory from '@/components/TechInventory';
 
 const stats = [
   { label: 'Years Coding', value: 14, suffix: '+' },
@@ -68,24 +59,9 @@ export default function About() {
         </ScrollReveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-          {/* RPG Stat Bars */}
+          {/* Tech Inventory */}
           <ScrollReveal>
-            <div className="pixel-border bg-pixel-dark/80 p-6 sm:p-8 rounded-lg">
-              <h3 className="font-pixel text-xs text-leaf-fresh mb-6 uppercase tracking-widest">
-                Skill Proficiencies
-              </h3>
-              <div className="space-y-4">
-                {skills.map((skill, i) => (
-                  <StatBar
-                    key={skill.label}
-                    label={skill.label}
-                    value={skill.value}
-                    color={skill.color}
-                    delay={i * 150}
-                  />
-                ))}
-              </div>
-            </div>
+            <TechInventory />
           </ScrollReveal>
 
           {/* Stats */}
