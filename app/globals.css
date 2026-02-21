@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+:root {
+  --forest-deep: #1a4d2e;
+  --forest-canopy: #2d6a4f;
+  --leaf-fresh: #52b788;
+  --leaf-bright: #95d5b2;
+  --sunlight: #f9c74f;
+  --sunbeam: #f4a261;
+  --sky-clear: #90e0ef;
+  --sky-dawn: #caf0f8;
+  --pixel-white: #f0f7f0;
+  --pixel-dark: #0d1b0e;
+  --pixel-glow: #b5e48c;
+}
+
+@theme inline {
+  --color-forest-deep: var(--forest-deep);
+  --color-forest-canopy: var(--forest-canopy);
+  --color-leaf-fresh: var(--leaf-fresh);
+  --color-leaf-bright: var(--leaf-bright);
+  --color-sunlight: var(--sunlight);
+  --color-sunbeam: var(--sunbeam);
+  --color-sky-clear: var(--sky-clear);
+  --color-sky-dawn: var(--sky-dawn);
+  --color-pixel-white: var(--pixel-white);
+  --color-pixel-dark: var(--pixel-dark);
+  --color-pixel-glow: var(--pixel-glow);
+
+  --font-pixel: var(--font-pixel);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+body {
+  background: var(--pixel-dark);
+  color: var(--pixel-white);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+/* Scanline overlay */
+.scanline-overlay {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+}
+
+/* Pixel cursor */
+* {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Crect x='4' y='0' width='4' height='4' fill='%2352b788'/%3E%3Crect x='2' y='4' width='4' height='4' fill='%2352b788'/%3E%3Crect x='0' y='8' width='4' height='4' fill='%2352b788'/%3E%3Crect x='4' y='8' width='4' height='4' fill='%231a4d2e'/%3E%3Crect x='8' y='8' width='4' height='4' fill='%231a4d2e'/%3E%3Crect x='4' y='12' width='4' height='4' fill='%231a4d2e'/%3E%3C/svg%3E") 0 0, auto;
+}
+
+/* Blinking animation for PRESS START */
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Stat bar fill animation */
+@keyframes fill-bar {
+  from { width: 0%; }
+}
+
+.animate-fill-bar {
+  animation: fill-bar 1.5s ease-out forwards;
+}
+
+/* Pixel border utility */
+.pixel-border {
+  box-shadow:
+    inset -4px -4px 0px 0px rgba(0, 0, 0, 0.3),
+    inset 4px 4px 0px 0px rgba(255, 255, 255, 0.15),
+    0 0 0 4px var(--forest-deep);
+}
+
+/* Selection color */
+::selection {
+  background: var(--leaf-fresh);
+  color: var(--pixel-dark);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--pixel-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--forest-canopy);
+  border: 2px solid var(--pixel-dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--leaf-fresh);
+}
