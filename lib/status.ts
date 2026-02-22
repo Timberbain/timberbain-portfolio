@@ -12,9 +12,23 @@ interface PlayerMeta {
 }
 
 export const currentQuests: Quest[] = [
-  { label: "BUILDING", value: "A asymmetric 1v2 arena combat in phaser and colyseus", emoji: "⚒️" },
-  { label: "STUDYING", value: "Claude Code and spec driven development", emoji: "📖" },
-  { label: "INTO", value: "Barbeque", emoji: "⌨️" },
+  {
+    label: "BUILDING",
+    value:
+      "At the moment, I'm experimenting with building an asymmetric 1v2 arena combat game using Phaser and Colyseus.",
+    emoji: "⚒️",
+  },
+  {
+    label: "STUDYING",
+    value:
+      "With the recent developments in agentic AI, I'm exploring Claude Code and spec-driven development.",
+    emoji: "📖",
+  },
+  {
+    label: "INTO",
+    value: "Spring is just around the corner, so I'm gearing up for the barbecue season.",
+    emoji: "⌨️",
+  },
 ];
 
 export const playerMeta: PlayerMeta = {
