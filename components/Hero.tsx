@@ -49,7 +49,7 @@ export default function Hero() {
         {/* Subtitle */}
         <p className="font-body max-w-xl text-lg sm:text-xl md:text-2xl">
           <GradientText colors={["#52b788", "#f9c74f", "#90e0ef", "#52b788"]} animationSpeed={6}>
-            Building the future through trial and horror since 2012
+            Building the future through trial and horror since forever
           </GradientText>
         </p>
 

@@ -52,7 +52,7 @@ export const projects: Project[] = [
     name: "Är det Fredag?",
     tagline: "The only calendar you need",
     description:
-      "A hyper-specialised application that tells you exactly if it is friday or not, giving you that extra boost of dopamine for when you are leaving the office on a Friday.",
+      "A hyper-specialised application that tells you exactly if it is friday or not, giving you that extra boost of dopamine when leaving the office on Friday.",
     features: [
       "Real-time Friday detection with hydration-safe rendering",
       "Rainbow confetti celebration on Fridays",
@@ -61,7 +61,7 @@ export const projects: Project[] = [
     ],
     techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
     liveUrl: "https://fredag.minabekanta.se",
-    sourceUrl: "https://gitlab.com/Timberbain/fredag",
+    sourceUrl: "https://github.com/timberbain/fredag",
     color: "var(--sunlight)",
     icon: "🐸",
   },

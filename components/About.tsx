@@ -38,7 +38,7 @@ export default function About() {
             <p className="font-body text-pixel-white/90 text-lg leading-relaxed sm:text-xl">
               Hey, I&apos;m <span className="text-leaf-fresh font-semibold">Jonas Brandvik</span>,
               also known as <span className="text-sunlight font-semibold">Timberbain</span>.
-              Developer of the Year 2023. I&apos;ve been writing code since 2012 and love building
+              I&apos;ve been tinkering with code for as long as I can remember and love building
               things that blend creativity with technology.
             </p>
           </div>
