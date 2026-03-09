@@ -15,7 +15,7 @@ export const currentQuests: Quest[] = [
   {
     label: "BUILDING",
     value:
-      "At the moment, I'm experimenting with building an asymmetric 1v2 arena combat game using Phaser and Colyseus.",
+      "A geo location based game in godot using a custom map-tile server and realtime WS communication.",
     emoji: "⚒️",
   },
   {
