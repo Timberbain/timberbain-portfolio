@@ -83,6 +83,23 @@ export const projects: Project[] = [
     color: "var(--sunlight)",
     icon: "🐉",
   },
+  {
+    slug: "flavor-notes",
+    name: "Flavor Notes",
+    tagline: "Version control for recipes",
+    description: "I was running around the house the other day looking for an old recipe for a really nice lentil soup I made a while back. After being unable to find it, I resorted to google but couldnt't find the same - so I had to settle for another one that didn't tast the same. This got me thinking - There are probably more recipies spread around the house which I've spent time iterating over, So why not make a simple page where I can document all my recipes in one place, and track the changes I make to them over time? Approaching it like a developer.",
+    features: [
+      "Recipe versioning with detailed changelogs and ratings per iteration",
+      "Interactive version timeline to browse a recipe's full evolution",
+      "Tag-based filtering and bilingual support in English and Swedish",
+      "Rich metadata tracking including temperatures, equipment, weather, and pairings",
+    ],
+    techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    liveUrl: "https://flavor.brandvik.se/",
+    sourceUrl: "https://github.com/Timberbain/flavor-notes",
+    color: "var(--sunbeam)",
+    icon: "🍖",
+  },
 ];
 
 export function getProject(slug: string): Project | undefined {
