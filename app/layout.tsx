@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { pressStart2P, outfit, jetbrainsMono } from "@/lib/fonts";
 import "./globals.css";
 
@@ -15,6 +16,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <Script
+        defer
+        src="https://cloud.umami.is/script.js"
+        data-website-id="49659a66-3b7e-4991-ba6c-532f11c97a7b"
+      />
       <body
         className={`${pressStart2P.variable} ${outfit.variable} ${jetbrainsMono.variable} font-body bg-pixel-dark text-pixel-white antialiased`}
       >
