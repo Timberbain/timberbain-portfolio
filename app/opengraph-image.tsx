@@ -7,11 +7,7 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default async function OGImage() {
-  const [fontData, iconData] = await Promise.all([
-    readFile(join(process.cwd(), "lib/fonts/PressStart2P-Regular.ttf")),
-    readFile(join(process.cwd(), "lib/fonts/og-icon.png")),
-  ]);
-  const iconSrc = `data:image/png;base64,${iconData.toString("base64")}`;
+  const fontData = await readFile(join(process.cwd(), "lib/fonts/PressStart2P-Regular.ttf"));
 
   return new ImageResponse(
     <div
@@ -87,9 +83,6 @@ export default async function OGImage() {
           display: "flex",
         }}
       />
-
-      {/* Favicon icon */}
-      <img src={iconSrc} width="100" height="100" style={{ marginBottom: 24, borderRadius: 16 }} />
 
       {/* Title */}
       <div
