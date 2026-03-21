@@ -13,6 +13,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${project.name} - Timberbain`,
     description: project.tagline,
+    openGraph: {
+      title: `${project.name} - Timberbain`,
+      description: project.tagline,
+      type: "article" as const,
+      url: `/projects/${project.slug}`,
+    },
+    twitter: {
+      card: "summary_large_image" as const,
+    },
   };
 }
 

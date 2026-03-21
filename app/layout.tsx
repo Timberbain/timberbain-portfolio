@@ -1,12 +1,22 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { pressStart2P, outfit, jetbrainsMono } from "@/lib/fonts";
+import { SITE_URL } from "@/lib/constants";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Timberbain - Building the future, one pixel at a time",
   description:
     "Portfolio of Jonas Brandvik (Timberbain) - Developer, creator, and pixel enthusiast. Solarpunk meets retro gaming.",
+  openGraph: {
+    type: "website",
+    siteName: "Timberbain",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({
