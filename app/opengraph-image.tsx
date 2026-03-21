@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 
-export const alt = "Timberbain - Building the future, one pixel at a time";
+export const alt = "Timberbain - Building the future through trial and horror since forever";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -124,7 +124,7 @@ export default async function OGImage() {
           display: "flex",
         }}
       >
-        Building the future, one pixel at a time
+        Building the future through trial and horror since forever
       </div>
 
       {/* Bottom URL */}
