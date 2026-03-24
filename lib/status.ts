@@ -15,7 +15,7 @@ export const currentQuests: Quest[] = [
   {
     label: "BUILDING",
     value:
-      "A geo location based game in godot using a custom map-tile server and realtime WS communication.",
+      "While on paternity leave, I'm building a geo location based game in Godot using a custom map-tile server and realtime WS communication.",
     emoji: "⚒️",
   },
   {

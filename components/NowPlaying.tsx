@@ -11,7 +11,7 @@ export default function NowPlaying() {
         {/* Quest Items */}
         <div className="flex-1">
           <h3 className="font-pixel text-leaf-fresh mb-6 text-xs tracking-widest uppercase">
-            Active Quests
+            Active Side Quests
           </h3>
           <div className="space-y-0">
             {currentQuests.map((quest, i) => (
