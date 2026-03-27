@@ -6,7 +6,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Timberbain - Building the future, one pixel at a time",
+  title: "Timberbain - Building the future through trial and horror since forever",
   description:
     "Portfolio of Jonas Brandvik (Timberbain) - Developer, creator, and pixel enthusiast. Solarpunk meets retro gaming.",
   openGraph: {
